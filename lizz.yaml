@@ -42,7 +42,7 @@ values:
       noUpper: false
       allowRepeat: false
   userValues:
-    - name: size
+    - name: masterIp
 dependsOn:
   {{- if index . "isNginxInstalled" }}
   - name: {{index . "nginxName"}}
@@ -63,4 +63,4 @@ dependsOn:
 encryption:
   enabled: true
   inputPaths:
-    - base/secret.yaml
+    - base/grafana-secret.yaml

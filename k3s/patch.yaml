@@ -12,7 +12,8 @@ spec:
       enabled: false
     kubeControllerManager:
       enabled: true
-      endpoints: ["192.168.122.213"]
+      endpoints:
+        - {{index . "namespace"}}
       service:
         enabled: true
         port: 10257
@@ -23,7 +24,8 @@ spec:
         insecureSkipVerify: true
     kubeScheduler:
       enabled: true
-      endpoints: ["192.168.122.213"]
+      endpoints:
+        - {{index . "namespace"}}
       service:
         enabled: true
         port: 10259
@@ -34,7 +36,8 @@ spec:
         insecureSkipVerify: true
     kubeProxy:
       enabled: true
-      endpoints: ["192.168.122.213"]
+      endpoints:
+        - {{index . "namespace"}}
       service:
         enabled: true
         port: 10249

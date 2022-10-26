@@ -1,6 +1,6 @@
 <h1 align="center">Lizz compatible Kube Prometheus Stack application</h1>
 
-Lizz compatible application to add the [kube-prometheus stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) to a Lizz managed Kubernetes cluster.
+Lizz compatible application to add the [kube-prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) to a Lizz managed Kubernetes cluster.
 
 To learn more about Lizz, see the [documentation](https://openlizz.com).
 
@@ -19,7 +19,7 @@ lizz add github \
     --fleet=fleet \
     --origin-url=https://github.com/openlizz/application-kube-prometheus-stack \
     --path=./default \
-    --destination=nextcloud \
+    --destination=kube-prometheus-stack \
     --cluster-role \
     --personal
 ```
