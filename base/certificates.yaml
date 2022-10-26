@@ -1,0 +1,39 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: alertmanager-cert
+  namespace: {{index . "namespace"}}
+spec:
+  dnsNames:
+    - alertmanager.{{ index . "domain"}}
+  secretName: alertmanager-cert
+  issuerRef:
+    name: cluster-issuer
+    kind: ClusterIssuer
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: grafana-cert
+  namespace: {{index . "namespace"}}
+spec:
+  dnsNames:
+    - grafana.{{ index . "domain"}}
+  secretName: grafana-cert
+  issuerRef:
+    name: cluster-issuer
+    kind: ClusterIssuer
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: prometheus-cert
+  namespace: {{index . "namespace"}}
+spec:
+  dnsNames:
+    - prometheus.{{ index . "domain"}}
+  secretName: prometheus-cert
+  issuerRef:
+    name: cluster-issuer
+    kind: ClusterIssuer
