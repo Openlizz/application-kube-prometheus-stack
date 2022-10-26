@@ -27,8 +27,6 @@ spec:
         {{- if and (index . "isNginxInstalled") (index . "isDomainInstalled") }}
         enabled: true
         ingressClassName: nginx
-        annotations:
-          kubernetes.io/ingress.class: nginx
         servicePort: 8081
         hosts:
           - alertmanager.{{ index . "domain"}}
@@ -62,7 +60,6 @@ spec:
         enabled: true
         ingressClassName: nginx
         annotations:
-          kubernetes.io/ingress.class: nginx
           kubernetes.io/tls-acme: "true"
         hosts:
           - grafana.{{ index . "domain"}}
@@ -81,8 +78,6 @@ spec:
         {{- if and (index . "isNginxInstalled") (index . "isDomainInstalled") }}
         enabled: true
         ingressClassName: nginx
-        annotations:
-          kubernetes.io/ingress.class: nginx
         servicePort: 8081
         hosts:
           - prometheus.{{ index . "domain"}}
