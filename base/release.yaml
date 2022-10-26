@@ -27,7 +27,8 @@ spec:
         {{- if and (index . "isNginxInstalled") (index . "isDomainInstalled") }}
         enabled: true
         ingressClassName: nginx
-        servicePort: 8081
+        servicePort: 9093
+        pathType: Prefix
         hosts:
           - alertmanager.{{ index . "domain"}}
         paths:
@@ -78,7 +79,8 @@ spec:
         {{- if and (index . "isNginxInstalled") (index . "isDomainInstalled") }}
         enabled: true
         ingressClassName: nginx
-        servicePort: 8081
+        servicePort: 9090
+        pathType: Prefix
         hosts:
           - prometheus.{{ index . "domain"}}
         paths:
