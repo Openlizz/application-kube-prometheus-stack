@@ -45,12 +45,12 @@ spec:
         {{- end }}
       {{- if and (index . "isNginxInstalled") (index . "isDomainInstalled") }}
       alertmanagerSpec:
-        externalUrl: "http://alertmanager.{{ index . "domain"}}
+        externalUrl: http://alertmanager.{{ index . "domain"}}
         routePrefix: /
       {{- end }}
       {{- if and (index . "isNginxInstalled") (index . "isDomainInstalled") (index . "isCertManagerInstalled") }}
       alertmanagerSpec:
-        externalUrl: "https://alertmanager.{{ index . "domain"}}
+        externalUrl: https://alertmanager.{{ index . "domain"}}
         routePrefix: /
       {{- end }}
     grafana:
@@ -100,12 +100,12 @@ spec:
         {{- end }}
       {{- if and (index . "isNginxInstalled") (index . "isDomainInstalled") }}
       prometheusSpec:
-        externalUrl: "http://prometheus.{{ index . "domain"}}
+        externalUrl: http://prometheus.{{ index . "domain"}}
         routePrefix: /
       {{- end }}
       {{- if and (index . "isNginxInstalled") (index . "isDomainInstalled") (index . "isCertManagerInstalled") }}
       prometheusSpec:
-        externalUrl: "https://prometheus.{{ index . "domain"}}
+        externalUrl: https://prometheus.{{ index . "domain"}}
         routePrefix: /
       {{- end }}
     
